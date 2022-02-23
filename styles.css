@@ -8,6 +8,7 @@
 :root {
   --primary-color: #9f4292;
   --primary-color-opacity: #e6a5dd;
+  --primary-color-opacity2: #d87bcc;
   --secondary-color: #75c9c0;
   --secondary-color-hover: #59a39c;
   font-size: 62.5%;
@@ -19,7 +20,111 @@ header {
   position: relative;
   overflow: hidden;
   height: 100vh;
+  z-index: 1;
 }
+
+.header-transition1{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(-100%);
+  background: var(--primary-color-opacity);
+  z-index: 5;
+}
+
+
+.header-sibling.open{
+  z-index: 10;
+  animation: headerTransition3 1.1s linear both;
+}
+
+.header-sibling.reverse{
+  z-index: 10;
+  animation: headerTransition3Reverse 1.1s linear both;
+}
+
+.header-transition1.open{
+  animation: headerTransition 2s linear both;
+}
+
+.header-transition1.reverse{
+  animation: headerTransitionReverse 2s linear both;
+}
+
+.header-transition2.reverse{
+  animation: headerTransition2Reverse 2s linear both;
+}
+
+.header-transition-arrow{
+  color: #000;
+  z-index: 15; 
+  font-weight: 900;
+  cursor: pointer;
+  user-select: none;
+}
+
+.header-transition-arrow1{
+  position: absolute;
+  left: 95%;
+  top: -10%;
+  width: 5%;
+  height: 110%;
+  display: grid;
+  place-items: center; 
+}
+
+.header-transition-arrow1 span{
+  font-size: 5rem;
+}
+
+.header-transition-arrow2{
+  position: absolute;
+  left: 0;
+  top: -10%;
+  width: 5%;
+  height: 110%;
+  display: grid;
+  place-items: center; 
+}
+
+.header-transition-arrow2 span{
+  font-size: 5rem;
+}
+
+.header-transition2{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  width: 100%;
+  height: 100vh;
+  z-index: 6;
+  background: var(--primary-color-opacity2);
+}
+
+.header-sibling{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-110%);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: var(--primary-color);
+}
+.header-transition2.open{
+  animation: headerTransition2 2s linear both;
+}
+
+
+/* create two classes holding the animations for the other headers and two more for reversing the animations */
+
+
+
 header::before {
   position: absolute;
   content: "";
@@ -104,6 +209,12 @@ nav .btn {
   height: 100%;
   width: 60%;
   display: flex;
+}
+
+.hero-svg2{
+  position: inherit;
+  margin-top: 5%;
+  left: 17%;
 }
 
 .img-1 {
@@ -411,22 +522,146 @@ form button:hover {
     opacity: 1;
   }
 }
-/* 
-@keyframes fadeInReverse {
-  0% {
-    transform: translateX(20rem);
-    opacity: 0;
-  }
 
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-} */
 
 @keyframes fadeUp {
   100% {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+@keyframes headerTransition{
+  0%{
+  transform: translateX(-90%);
+  }
+
+  25%{
+    transform: translateX(-40%);
+    }
+
+  50%{
+    transform: translateX(10%);
+    }
+
+  75%{
+    transform: translateX(60%);
+    }
+
+  100%{
+    transform: translateX(110%);
+    }
+}
+
+@keyframes headerTransitionReverse{
+  0%{
+  transform: translateX(20%);
+  }
+
+  25%{
+    transform: translateX(-30%);
+    }
+
+  50%{
+    transform: translateX(-80%);
+    }
+
+  75%{
+    transform: translateX(-130%);
+    }
+
+  100%{
+    transform: translateX(-180%);
+    }
+}
+
+
+
+@keyframes headerTransition2{
+  0%{
+  transform: translateX(-100%);
+  }
+
+  25%{
+    transform: translateX(-50%);
+    }
+
+  50%{
+    transform: translateX(0%);
+    }
+
+  75%{
+    transform: translateX(50%);
+    }
+
+  100%{
+    transform: translateX(100%);
+    }
+}
+
+@keyframes headerTransition2Reverse{
+  0%{
+  transform: translateX(10%);
+  }
+
+  25%{
+    transform: translateX(-40%);
+    }
+
+  50%{
+    transform: translateX(-90%);
+    }
+
+  75%{
+    transform: translateX(-140%);
+    }
+
+  100%{
+    transform: translateX(-190%);
+    }
+}
+
+
+@keyframes headerTransition3{
+  0%{
+  transform: translateX(-110%);
+  }
+
+  25%{
+    transform: translateX(-81%);
+    }
+
+  50%{
+    transform: translateX(-52%);
+    }
+
+  75%{
+    transform: translateX(-23%);
+    }
+
+  100%{
+    transform: translateX(0);
+    }
+}
+
+@keyframes headerTransition3Reverse{
+  0%{
+  transform: translateX(0%);
+  }
+
+  25%{
+    transform: translateX(-23%);
+    }
+
+  50%{
+    transform: translateX(-52%);
+    }
+
+  75%{
+    transform: translateX(-81%);
+    }
+
+  100%{
+    transform: translateX(-110%);
+    }
 }
