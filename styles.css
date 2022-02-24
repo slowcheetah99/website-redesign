@@ -59,11 +59,12 @@ header {
 }
 
 .header-transition-arrow{
-  color: #000;
+  color: var(--secondary-color);
   z-index: 15; 
   font-weight: 900;
   cursor: pointer;
   user-select: none;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .header-transition-arrow1{
@@ -78,6 +79,7 @@ header {
 
 .header-transition-arrow1 span{
   font-size: 5rem;
+  transition: transform .4s cubic-bezier(0.61, 1, 0.88, 1);
 }
 
 .header-transition-arrow2{
@@ -92,6 +94,11 @@ header {
 
 .header-transition-arrow2 span{
   font-size: 5rem;
+  transition: transform .4s cubic-bezier(0.61, 1, 0.88, 1);
+}
+
+.header-transition-arrow1 span:hover, .header-transition-arrow2 span:hover{
+  transform: translateY(-.5rem);
 }
 
 .header-transition2{
@@ -422,8 +429,8 @@ form button:hover {
   user-select: none;
 }
 
-.faq-div.fit-content{
-  height: fit-content;
+.faq-div{
+  height: 6rem;
   transition: all .4s ease;
 }
 
@@ -432,20 +439,20 @@ form button:hover {
 }
 
 .faq-answer{
-  height: 0;
   overflow: hidden;
-  transition: .5s ease;
-}
-
-.fit{
-  height: fit-content;
-  overflow: visible;
+  transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .faq-div .iconify {
   font-size: 2rem;
   color: var(--primary-color-opacity);
   cursor: pointer;
+  transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.faq-div .iconify.rotate{
+  color: var(--primary-color);
+  transform: rotate(-90deg);
 }
 
 .newsletter{

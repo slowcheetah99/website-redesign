@@ -1,6 +1,5 @@
 const faqAnswer = document.querySelectorAll(".faq-answer");
 const faqDiv = document.querySelectorAll(".faq-div");
-const faqIcon = document.querySelectorAll(".faq-div div .iconify");
 const featureImgs = document.querySelectorAll(".feature img");
 const featureText = document.querySelectorAll(".feature div");
 const arrowRight = document.querySelector(".header-transition-arrow1");
@@ -53,8 +52,16 @@ arrowLeft.addEventListener("click", () => {
 for (let i = 0; i < faqDiv.length; i++) {
   faqDiv[i].addEventListener("click", () => {
     //try and use easings.net to add the animation
-    faqAnswer[i].style.transition = "1s ease";
-    faqAnswer[i].classList.toggle("fit");
+    const faqIcon = faqDiv[i].querySelector("div .iconify");
+    const faqAnswerHeight = faqAnswer[i].clientHeight;
+    const faqDivHeight = faqDiv[i].clientHeight;
+    if (!faqIcon.classList.contains("rotate")) {
+      faqIcon.classList.add("rotate");
+      faqDiv[i].style.height = `${faqDivHeight + faqAnswerHeight + 20}px`;
+    } else {
+      faqIcon.classList.remove("rotate");
+      faqDiv[i].style.height = "60px";
+    }
   });
 }
 
