@@ -59,25 +59,20 @@ for (let i = 0; i < faqDiv.length; i++) {
 }
 
 //intersection observer
-
 const options = {
   threshold: 0,
   rootMargin: "0px 0px -300px 0px",
-};
-
-const textOptions = {
-  threshold: 0,
-  rootMargin: "-800px",
 };
 
 const fadeInAnimation = new IntersectionObserver((entries, fadeInAnimation) => {
   for (let i = 0; i < entries.length; i++) {
     if (!entries[i].isIntersecting) {
       return;
-    }
-    if (!entries[i].target.classList.contains("feature1-animation")) {
-      entries[i].target.classList.toggle("feature1-animation");
+    } else if (!entries[i].target.classList.contains("feature1-animation")) {
+      entries[i].target.classList.add("feature1-animation");
       fadeInAnimation.unobserve(entries[i].target);
+      const entrySibling = entries[i].target.parentElement.querySelector("div");
+      entrySibling.classList.add("feature-text-animation");
     } else {
       return;
     }
@@ -86,18 +81,4 @@ const fadeInAnimation = new IntersectionObserver((entries, fadeInAnimation) => {
 
 featureImgs.forEach((featureImg) => {
   fadeInAnimation.observe(featureImg);
-});
-
-const fadeUpAnimation = new IntersectionObserver((entries, fadeUpAnimation) => {
-  entries.forEach((entry) => {
-    if (!entry.target.classList.contains("feature-text-animation")) {
-      entry.target.classList.toggle("feature-text-animation");
-      fadeUpAnimation.unobserve(entry.target);
-    }
-    return;
-  });
-}, textOptions);
-
-featureText.forEach((feature) => {
-  fadeUpAnimation.observe(feature);
 });

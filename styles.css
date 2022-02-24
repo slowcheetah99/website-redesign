@@ -219,12 +219,12 @@ nav .btn {
 
 .img-1 {
   width: 15rem;
-  animation: hover 4s cubic-bezier(0.61, 1, 0.88, 1) infinite both;
+  animation: hover 6s cubic-bezier(0.61, 1, 0.88, 1) infinite both;
 }
 
 .img-3 {
   width: 15rem;
-  animation: hover 4s cubic-bezier(0.61, 1, 0.88, 1) infinite both;
+  animation: hover 6s cubic-bezier(0.61, 1, 0.88, 1) infinite both;
 }
 
 .mini-nav {
