@@ -11,6 +11,8 @@ const headerTransition1 = document.querySelector(".header-transition1");
 const headerTransition2 = document.querySelector(".header-transition2");
 const header = document.querySelector("header");
 
+//classList additions and removals are essential for the animations to be triggered on the css side.
+
 arrowRight.addEventListener("click", () => {
   if (
     !headerSibling.classList.contains("open") ||
@@ -49,6 +51,7 @@ arrowLeft.addEventListener("click", () => {
   }
 });
 
+//accordion animation for the faq section
 for (let i = 0; i < faqDiv.length; i++) {
   faqDiv[i].addEventListener("click", () => {
     //try and use easings.net to add the animation
@@ -71,6 +74,7 @@ const options = {
   rootMargin: "0px 0px -300px 0px",
 };
 
+//fadeIn and fadeUp animation for the sibling element
 const fadeInAnimation = new IntersectionObserver((entries, fadeInAnimation) => {
   for (let i = 0; i < entries.length; i++) {
     if (!entries[i].isIntersecting) {

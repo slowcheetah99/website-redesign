@@ -23,7 +23,8 @@ header {
   z-index: 1;
 }
 
-.header-transition1{
+/* carousel animations */
+.header-transition1 {
   position: absolute;
   content: "";
   top: 0;
@@ -35,73 +36,76 @@ header {
   z-index: 5;
 }
 
-
-.header-sibling.open{
+.header-sibling.open {
   z-index: 10;
   animation: headerTransition3 1.1s linear both;
 }
 
-.header-sibling.reverse{
+.header-sibling.reverse {
   z-index: 10;
   animation: headerTransition3Reverse 1.1s linear both;
 }
 
-.header-transition1.open{
+.header-transition1.open {
   animation: headerTransition 2s linear both;
 }
 
-.header-transition1.reverse{
+.header-transition1.reverse {
   animation: headerTransitionReverse 2s linear both;
 }
 
-.header-transition2.reverse{
+.header-transition2.reverse {
   animation: headerTransition2Reverse 2s linear both;
 }
 
-.header-transition-arrow{
+/* end of carousel animations */
+
+/* carousel arrow animations */
+.header-transition-arrow {
   color: var(--secondary-color);
-  z-index: 15; 
+  z-index: 15;
   font-weight: 900;
   cursor: pointer;
   user-select: none;
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.header-transition-arrow1{
+.header-transition-arrow1 {
   position: absolute;
   left: 95%;
   top: -10%;
   width: 5%;
   height: 110%;
   display: grid;
-  place-items: center; 
+  place-items: center;
 }
 
-.header-transition-arrow1 span{
+.header-transition-arrow1 span {
   font-size: 5rem;
-  transition: transform .4s cubic-bezier(0.61, 1, 0.88, 1);
+  transition: transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
 }
 
-.header-transition-arrow2{
+.header-transition-arrow2 {
   position: absolute;
   left: 0;
   top: -10%;
   width: 5%;
   height: 110%;
   display: grid;
-  place-items: center; 
+  place-items: center;
 }
 
-.header-transition-arrow2 span{
+.header-transition-arrow2 span {
   font-size: 5rem;
-  transition: transform .4s cubic-bezier(0.61, 1, 0.88, 1);
+  transition: transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
 }
 
-.header-transition-arrow1 span:hover, .header-transition-arrow2 span:hover{
-  transform: translateY(-.5rem);
+.header-transition-arrow1 span:hover,
+.header-transition-arrow2 span:hover {
+  transform: translateY(-0.5rem);
 }
 
-.header-transition2{
+.header-transition2 {
   position: absolute;
   content: "";
   top: 0;
@@ -113,7 +117,9 @@ header {
   background: var(--primary-color-opacity2);
 }
 
-.header-sibling{
+/* end of carousel arrow animations */
+
+.header-sibling {
   position: absolute;
   top: 0;
   left: 0;
@@ -123,14 +129,9 @@ header {
   z-index: 10;
   background-color: var(--primary-color);
 }
-.header-transition2.open{
+.header-transition2.open {
   animation: headerTransition2 2s linear both;
 }
-
-
-/* create two classes holding the animations for the other headers and two more for reversing the animations */
-
-
 
 header::before {
   position: absolute;
@@ -172,6 +173,7 @@ nav .btn {
   border: none;
   border-radius: 4px;
   width: 12rem;
+  /* transition animation for btn hover */
   transition: all 0.4s ease;
 }
 
@@ -202,9 +204,11 @@ nav .btn {
   border: none;
   border-radius: 4px;
   width: 12rem;
+  /* transition: animation for the button on the tagline/branding section */
   transition: all 0.4s ease;
 }
 
+/* transition for all the buttons with class btn */
 .btn:hover {
   transform: translateY(-0.25rem);
   background-color: var(--secondary-color-hover);
@@ -212,13 +216,16 @@ nav .btn {
   -webkit-box-shadow: -2px 18px 40px -10px rgba(0, 0, 0, 0.32);
   -moz-box-shadow: -2px 18px 40px -10px rgba(0, 0, 0, 0.32);
 }
+
+/*end of transition for all the buttons with class btn */
+
 .hero-svg {
   height: 100%;
   width: 60%;
   display: flex;
 }
 
-.hero-svg2{
+.hero-svg2 {
   position: inherit;
   margin-top: 5%;
   left: 17%;
@@ -226,11 +233,13 @@ nav .btn {
 
 .img-1 {
   width: 15rem;
+  /* hover animation for the hero section right image */
   animation: hover 6s cubic-bezier(0.61, 1, 0.88, 1) infinite both;
 }
 
 .img-3 {
   width: 15rem;
+  /* hover animation for the hero section left image */
   animation: hover 6s cubic-bezier(0.61, 1, 0.88, 1) infinite both;
 }
 
@@ -280,28 +289,34 @@ nav .btn {
   opacity: 0;
 }
 
-.feature1 img{
+.feature1 img {
+  /* starting position of the img before animation */
   transform: translateX(-20rem);
 }
 
-.feature2 img{
+.feature2 img {
+  /* starting position of the img before animation */
   transform: translateX(20rem);
 }
 
-.feature1-animation{
+.feature1-animation {
+  /* intersection observer fadeIn animation */
   animation: fadeIn 0.8s cubic-bezier(0.61, 1, 0.88, 1) both;
 }
 
 /* .feature2-animation{
   animation: fadeInReverse 0.8s cubic-bezier(0.61, 1, 0.88, 1) both;
 } */
+
 .feature div {
+  /* starting position for the fadeOut animation */
   width: 50%;
   transform: translateY(20rem);
   opacity: 0;
 }
 
-.feature-text-animation{
+.feature-text-animation {
+  /* intersection observer fadeOut animation */
   animation: fadeUp 1s 1.1s cubic-bezier(0.61, 1, 0.88, 1) both;
 }
 
@@ -364,6 +379,7 @@ nav .btn {
   height: 100%;
   background-color: green;
   z-index: 0;
+  /* clip path for the financial literacy form */
   clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
   background-color: var(--primary-color);
   border-radius: 16px 0 0 16px;
@@ -383,9 +399,12 @@ nav .btn {
 }
 
 .calc-form input {
+  /* subtle perspective-esque styling */
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.32);
   border-top: 2px solid #ddd;
   border-left: 2px solid #ddd;
+  /* subtle perspective-esque styling */
+  /* animation for form input on focus */
   transition: all 0.4s ease;
 }
 
@@ -395,6 +414,7 @@ nav .btn {
   -moz-box-shadow: 10px 10px 93px -36px rgba(0, 0, 0, 0.75);
   border: 2px solid var(--secondary-color-hover);
   outline: none;
+  /* onFocus animation state changes */
 }
 
 form button {
@@ -403,6 +423,7 @@ form button {
   font-weight: bold;
   font-size: 1.3rem;
   border-radius: 4px;
+  /* transition animation for the form button */
   transition: all 0.4s ease;
 }
 
@@ -412,9 +433,8 @@ form button:hover {
   box-shadow: -2px 18px 40px -10px rgba(0, 0, 0, 0.32);
   -webkit-box-shadow: -2px 18px 40px -10px rgba(0, 0, 0, 0.32);
   -moz-box-shadow: -2px 18px 40px -10px rgba(0, 0, 0, 0.32);
+  /* state changes for the button on hover */
 }
-
-
 
 .faq-section {
   padding-inline: 10%;
@@ -429,33 +449,35 @@ form button:hover {
   user-select: none;
 }
 
-.faq-div{
+.faq-div {
   height: 6rem;
-  transition: all .4s ease;
+  transition: all 0.4s ease;
 }
 
 .faq-div div {
   margin-bottom: 1.5rem;
 }
 
-.faq-answer{
+.faq-answer {
   overflow: hidden;
-  transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  /* accordion transition animation */
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .faq-div .iconify {
   font-size: 2rem;
   color: var(--primary-color-opacity);
   cursor: pointer;
-  transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  /* svg rotate animation */
+  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.faq-div .iconify.rotate{
+.faq-div .iconify.rotate {
   color: var(--primary-color);
   transform: rotate(-90deg);
 }
 
-.newsletter{
+.newsletter {
   margin-inline: 10%;
   background-color: var(--primary-color);
   width: 80%;
@@ -466,13 +488,13 @@ form button:hover {
   margin-block: 5%;
 }
 
-.newsletter p{
+.newsletter p {
   width: 60%;
   text-align: center;
   margin: 0 auto;
 }
 
-.newsletter form{
+.newsletter form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -481,26 +503,30 @@ form button:hover {
   padding-top: 5%;
 }
 
-.newsletter form input{
+.newsletter form input {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.32);
   border-top: 2px solid #ddd;
   border-left: 2px solid #ddd;
+  /* onFocus animation  */
   transition: all 0.4s ease;
   width: 70%;
   margin-inline: auto;
 }
 
-.newsletter form input:focus{
+.newsletter form input:focus {
   box-shadow: 10px 10px 93px -36px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 10px 93px -36px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 93px -36px rgba(0, 0, 0, 0.75);
   border: 2px solid var(--secondary-color-hover);
   outline: none;
+  /* onFocus state changes  */
 }
 
-.newsletter form button{
+.newsletter form button {
   margin: 0 auto;
 }
+
+/* hover animation for elements with animation name hover */
 @keyframes hover {
   0% {
     transform: translateY(0);
@@ -522,15 +548,15 @@ form button:hover {
   }
 }
 
+/* fade in animation for the elements with animation name fadeIn */
 @keyframes fadeIn {
-
   100% {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-
+/* fade in animation for the elements with animation name fadeUp */
 @keyframes fadeUp {
   100% {
     transform: translateY(0);
@@ -538,137 +564,140 @@ form button:hover {
   }
 }
 
-@keyframes headerTransition{
-  0%{
-  transform: translateX(-90%);
-  }
-
-  25%{
-    transform: translateX(-40%);
-    }
-
-  50%{
-    transform: translateX(10%);
-    }
-
-  75%{
-    transform: translateX(60%);
-    }
-
-  100%{
-    transform: translateX(110%);
-    }
-}
-
-@keyframes headerTransitionReverse{
-  0%{
-  transform: translateX(20%);
-  }
-
-  25%{
-    transform: translateX(-30%);
-    }
-
-  50%{
-    transform: translateX(-80%);
-    }
-
-  75%{
-    transform: translateX(-130%);
-    }
-
-  100%{
-    transform: translateX(-180%);
-    }
-}
-
-
-
-@keyframes headerTransition2{
-  0%{
-  transform: translateX(-100%);
-  }
-
-  25%{
-    transform: translateX(-50%);
-    }
-
-  50%{
-    transform: translateX(0%);
-    }
-
-  75%{
-    transform: translateX(50%);
-    }
-
-  100%{
-    transform: translateX(100%);
-    }
-}
-
-@keyframes headerTransition2Reverse{
-  0%{
-  transform: translateX(10%);
-  }
-
-  25%{
-    transform: translateX(-40%);
-    }
-
-  50%{
+/* fade in animation for the elements with animation name headerTransition */
+@keyframes headerTransition {
+  0% {
     transform: translateX(-90%);
-    }
+  }
 
-  75%{
+  25% {
+    transform: translateX(-40%);
+  }
+
+  50% {
+    transform: translateX(10%);
+  }
+
+  75% {
+    transform: translateX(60%);
+  }
+
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+/* fade in animation for the elements with animation name headerTransitionReverse */
+@keyframes headerTransitionReverse {
+  0% {
+    transform: translateX(20%);
+  }
+
+  25% {
+    transform: translateX(-30%);
+  }
+
+  50% {
+    transform: translateX(-80%);
+  }
+
+  75% {
+    transform: translateX(-130%);
+  }
+
+  100% {
+    transform: translateX(-180%);
+  }
+}
+
+/* fade in animation for the elements with animation name headerTransition2 */
+@keyframes headerTransition2 {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  25% {
+    transform: translateX(-50%);
+  }
+
+  50% {
+    transform: translateX(0%);
+  }
+
+  75% {
+    transform: translateX(50%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* fade in animation for the elements with animation name headerTransition2Reverse */
+@keyframes headerTransition2Reverse {
+  0% {
+    transform: translateX(10%);
+  }
+
+  25% {
+    transform: translateX(-40%);
+  }
+
+  50% {
+    transform: translateX(-90%);
+  }
+
+  75% {
     transform: translateX(-140%);
-    }
+  }
 
-  100%{
+  100% {
     transform: translateX(-190%);
-    }
+  }
 }
 
-
-@keyframes headerTransition3{
-  0%{
-  transform: translateX(-110%);
-  }
-
-  25%{
-    transform: translateX(-81%);
-    }
-
-  50%{
-    transform: translateX(-52%);
-    }
-
-  75%{
-    transform: translateX(-23%);
-    }
-
-  100%{
-    transform: translateX(0);
-    }
-}
-
-@keyframes headerTransition3Reverse{
-  0%{
-  transform: translateX(0%);
-  }
-
-  25%{
-    transform: translateX(-23%);
-    }
-
-  50%{
-    transform: translateX(-52%);
-    }
-
-  75%{
-    transform: translateX(-81%);
-    }
-
-  100%{
+/* fade in animation for the elements with animation name headerTransition3 */
+@keyframes headerTransition3 {
+  0% {
     transform: translateX(-110%);
-    }
+  }
+
+  25% {
+    transform: translateX(-81%);
+  }
+
+  50% {
+    transform: translateX(-52%);
+  }
+
+  75% {
+    transform: translateX(-23%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* fade in animation for the elements with animation name headerTransition3Reverse */
+@keyframes headerTransition3Reverse {
+  0% {
+    transform: translateX(0%);
+  }
+
+  25% {
+    transform: translateX(-23%);
+  }
+
+  50% {
+    transform: translateX(-52%);
+  }
+
+  75% {
+    transform: translateX(-81%);
+  }
+
+  100% {
+    transform: translateX(-110%);
+  }
 }
